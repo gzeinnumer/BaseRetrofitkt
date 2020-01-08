@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
+import com.gzeinnumer.baseretrofitkt.base.BaseRepositoryApiCallImpl
+import com.gzeinnumer.baseretrofitkt.base.getCategoriesList
+import com.gzeinnumer.baseretrofitkt.base.getCategoriesObject
 import com.gzeinnumer.baseretrofitkt.network.handling.MyStatus
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Log.d("MyZeinSistem", "MainActivity + onCreate")
 
-        getCategoriesObject().observe(this, Observer {
+        //Type 1
+        //BaseApiCall
+        getCategoriesObject()
+            .observe(this, Observer {
             when(it.myStatus) {
                 MyStatus.SHOWLOADING -> {
                     Log.d("MyZein", "Loading Object")
@@ -44,7 +50,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        getCategoriesList().observe(this, Observer {
+        getCategoriesList()
+            .observe(this, Observer {
             when(it.myStatus) {
                 MyStatus.SHOWLOADING -> {
                     Log.d("MyZein", "Loading List")
@@ -75,5 +82,15 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        //Type 2
+        //BaseRepositoryApiCall
+        //BaseRepositoryApiCallImpl
+        BaseRepositoryApiCallImpl(this).getCategoriesList().observe(this, Observer {
+            //action here
+        })
+
+        BaseRepositoryApiCallImpl(this).getCategoriesObject().observe(this, Observer {
+            //action here
+        })
     }
 }

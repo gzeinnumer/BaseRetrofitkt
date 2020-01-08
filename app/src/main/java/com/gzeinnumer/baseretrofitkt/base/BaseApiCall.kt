@@ -1,9 +1,7 @@
-package com.gzeinnumer.baseretrofitkt
+package com.gzeinnumer.baseretrofitkt.base
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.gzeinnumer.baseretrofitkt.base.BaseListResponse
-import com.gzeinnumer.baseretrofitkt.base.BaseObjectResponse
 import com.gzeinnumer.baseretrofitkt.model.DataItem
 import com.gzeinnumer.baseretrofitkt.network.RetroServer
 import com.gzeinnumer.baseretrofitkt.network.handling.MyResource
