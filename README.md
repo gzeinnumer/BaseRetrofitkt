@@ -1,4 +1,6 @@
 # BaseRetrofitkt
+
+Please Enable [Retrofit](https://square.github.io/retrofit/) on your project, follow this step.
  
 - Make Class RetroServer
 ```kotlin
