@@ -28,3 +28,20 @@ object RetroServer {
         get() = setInit().create<ApiService>(ApiService::class.java)
 }
 ```
+
+- ApiService.java
+```java
+interface ApiService {
+    @GET("categories.php")
+    fun categoriesObject(): Call<BaseObjectResponse<DataItem>>
+
+    @GET("categories.php")
+    fun categoriesList(): Call<BaseListResponse<DataItem>>
+}
+```
+
+---
+
+```
+Copyright 2020 M. Fadli Zein
+```
